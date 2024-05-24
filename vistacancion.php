@@ -46,13 +46,26 @@
                             <td><a href=""><img src="iconos/floppy-fill.svg"></td>
                             <td><a href=""><img src="iconos/trash-fill.svg"></a></td>
                         </tr>
-
-
-
                 <?php
                     }
                 } else {
                     echo "<tr><td colspan='5' class='text-center'>No se encontraron resultados</td></tr>";
+                }
+                ?>
+
+                <?php
+
+                $sql = "DELETE FROM cancion WHERE id_can";
+
+
+                // validación proceso
+
+                if ($conexion->query($sql) === TRUE) {
+
+                    echo "Eliminación de registro exitosa";
+                } else {
+
+                    $conexion->error;
                 }
                 ?>
             </tbody>
